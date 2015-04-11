@@ -1,6 +1,10 @@
 package com.classifieds.app.service.impl;
 
+import com.classifieds.app.model.Category;
+import com.classifieds.app.model.Classified;
 import com.classifieds.app.model.User;
+import com.classifieds.app.repository.CategoryRepository;
+import com.classifieds.app.repository.ClassifiedRepository;
 import com.classifieds.app.repository.UserRepository;
 import com.classifieds.app.service.ClassifiedService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +22,12 @@ public class ClassifiedServiceImpl implements ClassifiedService {
 
 	@Autowired
 	private UserRepository userRepository;
+
+	@Autowired
+	private ClassifiedRepository classifiedRepository;
+
+	@Autowired
+	private CategoryRepository categoryRepository;
 	
 	@Transactional
 	public User save(User user) {
@@ -46,7 +56,16 @@ public class ClassifiedServiceImpl implements ClassifiedService {
 
 	@Override
 	public List<User> getAllUsers() {
-		List<User> users = userRepository.getAllUsers();
-		return users;
+		return userRepository.getAllUsers();
+	}
+
+	@Override
+	public List<Classified> getAllClassifieds() {
+		return classifiedRepository.getAllClassifieds();
+	}
+
+	@Override
+	public List<Category> getAllCategories() {
+		return categoryRepository.getAllCategories();
 	}
 }
