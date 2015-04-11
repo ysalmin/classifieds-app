@@ -1,5 +1,7 @@
 package com.classifieds.app.resource;
 
+import com.classifieds.app.model.Category;
+import com.classifieds.app.model.Classified;
 import com.classifieds.app.model.User;
 import com.classifieds.app.service.ClassifiedService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -103,7 +105,20 @@ public class UserResource {
 	@Path("user")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<User> student() {
-		List<User> users = classifiedService.getAllUsers();
-		return users;
+		return classifiedService.getAllUsers();
+	}
+
+	@GET
+	@Path("classified")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Classified> classified() {
+		return classifiedService.getAllClassifieds();
+	}
+
+	@GET
+	@Path("category")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Category> category() {
+		return classifiedService.getAllCategories();
 	}
 }

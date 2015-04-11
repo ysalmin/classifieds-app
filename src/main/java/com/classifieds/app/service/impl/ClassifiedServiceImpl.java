@@ -36,22 +36,12 @@ public class ClassifiedServiceImpl implements ClassifiedService {
 
 	public boolean findByLogin(String userName, String password) {
 		User stud = userRepository.findByUserName(userName);
-		
-		if(stud != null && stud.getPassword().equals(password)) {
-			return true;
-		} 
-		
-		return false;		
+		return stud != null && stud.getPassword().equals(password);
 	}
 
 	public boolean findByUserName(String userName) {
 		User stud = userRepository.findByUserName(userName);
-		
-		if(stud != null) {
-			return true;
-		}
-		
-		return false;
+		return stud != null;
 	}
 
 	@Override
