@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.util.List;
 
 /**
  * Developer: YSalmin

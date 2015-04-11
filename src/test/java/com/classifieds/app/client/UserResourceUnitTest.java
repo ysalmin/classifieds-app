@@ -2,23 +2,6 @@ package com.classifieds.app.client;
 
 import static org.junit.Assert.assertEquals;
 
-import java.lang.reflect.Field;
-import java.text.ParseException;
-
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
-
-import com.classifieds.app.model.User;
-import com.classifieds.app.resource.UserResource;
-import org.glassfish.jersey.server.mvc.Viewable;
-import org.jmock.Expectations;
-import org.jmock.Mockery;
-import org.junit.Before;
-import org.junit.Test;
-
-import com.classifieds.app.resource.UserResource;
-import com.classifieds.app.service.StudentService;
-
 /**
  * Developer: YSalmin
  * Date: 11.04.2015

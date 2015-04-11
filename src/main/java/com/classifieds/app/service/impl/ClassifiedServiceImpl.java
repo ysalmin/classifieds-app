@@ -1,12 +1,11 @@
 package com.classifieds.app.service.impl;
 
 import com.classifieds.app.model.User;
-import com.classifieds.app.service.StudentService;
+import com.classifieds.app.repository.UserRepository;
+import com.classifieds.app.service.ClassifiedService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import com.classifieds.app.repository.UserRepository;
 
 import java.util.List;
 
@@ -15,7 +14,7 @@ import java.util.List;
  * Date: 11.04.2015
  */
 @Service("studentService")
-public class StudentServiceImpl implements StudentService {
+public class ClassifiedServiceImpl implements ClassifiedService {
 
 	@Autowired
 	private UserRepository userRepository;

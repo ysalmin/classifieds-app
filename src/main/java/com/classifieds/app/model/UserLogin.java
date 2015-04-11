@@ -1,9 +1,9 @@
 package com.classifieds.app.model;
 
-import javax.validation.constraints.Size;
-
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
+
+import javax.validation.constraints.Size;
 
 /**
  * Developer: YSalmin

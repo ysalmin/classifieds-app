@@ -1,28 +1,16 @@
 package com.classifieds.app.resource;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.classifieds.app.model.User;
+import com.classifieds.app.service.ClassifiedService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.Response.Status;
 import javax.xml.bind.annotation.XmlRootElement;
-
-
-import com.classifieds.app.model.User;
-import com.classifieds.app.service.StudentService;
-import org.glassfish.jersey.server.mvc.Viewable;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import java.util.List;
 
 /**
  * Developer: YSalmin
@@ -34,7 +22,7 @@ import org.springframework.stereotype.Component;
 public class UserResource {
 
 	@Autowired
-	private StudentService studentService;
+	private ClassifiedService classifiedService;
 /*
 	@GET
 	@Path("signup")
@@ -115,7 +103,7 @@ public class UserResource {
 	@Path("user")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<User> student() {
-		List<User> users = studentService.getAllUsers();
+		List<User> users = classifiedService.getAllUsers();
 		return users;
 	}
 }

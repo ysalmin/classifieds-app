@@ -9,13 +9,13 @@ import java.lang.reflect.Field;
 
 import com.classifieds.app.model.User;
 import com.classifieds.app.repository.UserRepository;
-import com.classifieds.app.service.impl.StudentServiceImpl;
+import com.classifieds.app.service.impl.ClassifiedServiceImpl;
 import org.jmock.Expectations;
 import org.jmock.Mockery;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.classifieds.app.service.StudentService;
+import com.classifieds.app.service.ClassifiedService;
 
 /**
  * Developer: YSalmin
@@ -24,18 +24,18 @@ import com.classifieds.app.service.StudentService;
 public class UserServiceUnitTest {
 	private Mockery context;
 	private UserRepository userRepository;
-	private StudentService studentService;
+	private ClassifiedService classifiedService;
 
 	@Before
 	public void beforeEachTest() throws Exception {
 		context = new Mockery();
 		userRepository = context.mock(UserRepository.class);
-		studentService = new StudentServiceImpl();
+		classifiedService = new ClassifiedServiceImpl();
 
-		Field field = studentService.getClass().getDeclaredField(
+		Field field = classifiedService.getClass().getDeclaredField(
 				"studentRepository");
 		field.setAccessible(true);
-		field.set(studentService, userRepository);
+		field.set(classifiedService, userRepository);
 	}
 
 	@Test
@@ -50,7 +50,7 @@ public class UserServiceUnitTest {
 				will(returnValue(userInterface));
 			}
 		});
-		studentService.findByLogin(userName, password);
+		classifiedService.findByLogin(userName, password);
 		assertNull(userInterface);
 
 		final String userName1 = "j2ee";
@@ -65,7 +65,7 @@ public class UserServiceUnitTest {
 				will(returnValue(password));
 			}
 		});
-		studentService.findByLogin(userName1, password);
+		classifiedService.findByLogin(userName1, password);
 		assertNotNull(user1);
 		assertEquals("j2ee", password);
 
@@ -79,7 +79,7 @@ public class UserServiceUnitTest {
 				will(returnValue(password1));
 			}
 		});
-		studentService.findByLogin(userName1, password1);
+		classifiedService.findByLogin(userName1, password1);
 		assertNotNull(user1);
 		assertNotEquals("j2ee", password1);
 
@@ -90,47 +90,47 @@ public class UserServiceUnitTest {
 	public void findByLoginWithNullParametersTest() {
 		final String userName = null;
 		final String password = null;
-		studentService = context.mock(StudentService.class);
+		classifiedService = context.mock(ClassifiedService.class);
 
 		context.checking(new Expectations() {
 			{
-				oneOf(studentService).findByLogin(with(aNull(String.class)),
+				oneOf(classifiedService).findByLogin(with(aNull(String.class)),
 						with(aNull(String.class)));
 				will(returnValue(false));
 			}
 		});
-		studentService.findByLogin(userName, password);
+		classifiedService.findByLogin(userName, password);
 
 		final String userName1 = "j2ee";
 
 		context.checking(new Expectations() {
 			{
-				oneOf(studentService).findByLogin(with(aNonNull(String.class)),
+				oneOf(classifiedService).findByLogin(with(aNonNull(String.class)),
 						with(aNull(String.class)));
 				will(returnValue(false));
 			}
 		});
-		studentService.findByLogin(userName1, password);
+		classifiedService.findByLogin(userName1, password);
 
 		final String password1 = "j2eee";
 
 		context.checking(new Expectations() {
 			{
-				oneOf(studentService).findByLogin(with(aNull(String.class)),
+				oneOf(classifiedService).findByLogin(with(aNull(String.class)),
 						with(aNonNull(String.class)));
 				will(returnValue(false));
 			}
 		});
-		studentService.findByLogin(userName, password1);
+		classifiedService.findByLogin(userName, password1);
 
 		context.checking(new Expectations() {
 			{
-				oneOf(studentService).findByLogin(with(aNonNull(String.class)),
+				oneOf(classifiedService).findByLogin(with(aNonNull(String.class)),
 						with(aNonNull(String.class)));
 				will(returnValue(false));
 			}
 		});
-		studentService.findByLogin(userName1, password1);
+		classifiedService.findByLogin(userName1, password1);
 
 		context.assertIsSatisfied();
 	}
@@ -147,7 +147,7 @@ public class UserServiceUnitTest {
 				will(returnValue(user));
 			}
 		});
-		studentService.findByLogin(userName, password);
+		classifiedService.findByLogin(userName, password);
 		assertNull(user);
 
 		context.assertIsSatisfied();
@@ -164,7 +164,7 @@ public class UserServiceUnitTest {
 				will(returnValue(with(any(User.class))));
 			}
 		});
-		studentService.findByUserName(userName);
+		classifiedService.findByUserName(userName);
 
 		context.assertIsSatisfied();
 	}
@@ -181,7 +181,7 @@ public class UserServiceUnitTest {
 				will(returnValue(user));
 			}
 		});
-		studentService.findByUserName(userName);
+		classifiedService.findByUserName(userName);
 		assertNull(user);
 
 		final String userName1 = "j2ee";
@@ -194,7 +194,7 @@ public class UserServiceUnitTest {
 				will(returnValue(userInterface1));
 			}
 		});
-		studentService.findByUserName(userName1);
+		classifiedService.findByUserName(userName1);
 		assertNotNull(userInterface1);
 
 		context.assertIsSatisfied();
