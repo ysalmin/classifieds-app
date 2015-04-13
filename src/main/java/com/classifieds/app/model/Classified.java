@@ -42,6 +42,8 @@ public class Classified {
     @OneToMany(fetch = FetchType.EAGER)//(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Category> categories = new HashSet<Category>();
 
+    public Classified(){}
+
     public Date getCreated() {
         return created;
     }

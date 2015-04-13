@@ -105,7 +105,7 @@ public class UserResource {
 	@GET
 	@Path("user")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<User> student() {
+	public List<User> user() {
 		return classifiedService.getAllUsers();
 	}
 

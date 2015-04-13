@@ -25,7 +25,9 @@ public class Category {
     private String name;
 
     @ManyToOne
-    Classified classified;
+    private Classified classified;
+
+    public Category() {}
 
     public Long getId() {
         return id;

@@ -56,6 +56,7 @@ public class ClassifiedServiceImpl implements ClassifiedService {
 	}
 
 	@Override
+	@Transactional
 	public List<Category> getAllCategories() {
 		return categoryRepository.getAllCategories();
 	}
