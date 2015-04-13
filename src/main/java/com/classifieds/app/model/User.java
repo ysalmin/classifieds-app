@@ -51,7 +51,7 @@ public class User {
 	@Past
 	@DateTimeFormat(pattern="MM/dd/yyyy")
 	private Date dateOfBirth;
-	
+
 	public Long getId() {
 		return id;
 	}
@@ -106,5 +106,5 @@ public class User {
 
 	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
-	}	
+	}
 }

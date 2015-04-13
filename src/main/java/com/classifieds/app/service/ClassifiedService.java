@@ -23,4 +23,8 @@ public interface ClassifiedService {
 	List<Classified> getAllClassifieds();
 
 	List<Category> getAllCategories();
+
+	Classified getClassifiedById(Long id);
+
+	Category getCategoryById(Long id);
 }

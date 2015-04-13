@@ -60,4 +60,14 @@ public class ClassifiedServiceImpl implements ClassifiedService {
 	public List<Category> getAllCategories() {
 		return categoryRepository.getAllCategories();
 	}
+
+	@Override
+	public Classified getClassifiedById(Long id) {
+		return classifiedRepository.getClassifiedById(id);
+	}
+
+	@Override
+	public Category getCategoryById(Long id) {
+		return categoryRepository.getCategoryById(id);
+	}
 }

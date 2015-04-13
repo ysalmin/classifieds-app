@@ -4,12 +4,14 @@ import com.classifieds.app.model.Category;
 import com.classifieds.app.model.Classified;
 import com.classifieds.app.model.User;
 import com.classifieds.app.service.ClassifiedService;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -22,7 +24,7 @@ import java.util.List;
 @Component
 @Path("/")
 @XmlRootElement
-public class UserResource {
+public class RootResource {
 
 	@Autowired
 	private ClassifiedService classifiedService;
@@ -114,6 +116,15 @@ public class UserResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Classified> classified() {
 		return classifiedService.getAllClassifieds();
+
+	}
+
+	@GET
+	@Path("classified/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Classified classifiedById(@PathParam("id") Long id) {
+		return classifiedService.getClassifiedById(id);
+
 	}
 
 	@GET
@@ -121,5 +132,12 @@ public class UserResource {
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Category> category() {
 		return classifiedService.getAllCategories();
+	}
+
+	@GET
+	@Path("category/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Category categoryById(@PathParam("id") Long id) {
+		return classifiedService.getCategoryById(id);
 	}
 }
