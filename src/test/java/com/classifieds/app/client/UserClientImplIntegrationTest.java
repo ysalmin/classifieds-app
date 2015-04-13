@@ -11,7 +11,7 @@ import org.junit.Test;
  * Date: 11.04.2015
  */
 public class UserClientImplIntegrationTest {
-	private UserClientImpl client;
+	/*private UserClientImpl client;
 		
 	@Before
 	public void beforeEachTest() {
@@ -41,6 +41,6 @@ public class UserClientImplIntegrationTest {
 	@Test(expected=RuntimeException.class)
 	public void PostLoginBadRequestTest() {
 		client.postLogin(null, null);
-	}
+	}*/
 
 }

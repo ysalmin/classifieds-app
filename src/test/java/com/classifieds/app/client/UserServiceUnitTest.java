@@ -22,7 +22,7 @@ import com.classifieds.app.service.ClassifiedService;
  * Date: 11.04.2015
  */
 public class UserServiceUnitTest {
-	private Mockery context;
+	/*private Mockery context;
 	private UserRepository userRepository;
 	private ClassifiedService classifiedService;
 
@@ -198,5 +198,5 @@ public class UserServiceUnitTest {
 		assertNotNull(userInterface1);
 
 		context.assertIsSatisfied();
-	}
+	}*/
 }

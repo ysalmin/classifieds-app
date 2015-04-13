@@ -6,6 +6,7 @@ import com.classifieds.app.model.User;
 import com.classifieds.app.service.ClassifiedService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

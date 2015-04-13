@@ -50,6 +50,7 @@ public class ClassifiedServiceImpl implements ClassifiedService {
 	}
 
 	@Override
+	@Transactional
 	public List<Classified> getAllClassifieds() {
 		return classifiedRepository.getAllClassifieds();
 	}

@@ -34,11 +34,53 @@ public class Classified {
     @Size(min=10, max=500)
     private String description;
 
-    @OneToMany//(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Set<Category> categories = new HashSet<Category>();
-
     @NotNull
     @Past
     @DateTimeFormat(pattern="MM/dd/yyyy")
     private Date created;
+
+    @OneToMany(fetch = FetchType.EAGER)//(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Category> categories = new HashSet<Category>();
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Set<Category> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Set<Category> categories) {
+        this.categories = categories;
+    }
+
+
 }
