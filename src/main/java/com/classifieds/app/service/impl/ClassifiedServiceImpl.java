@@ -56,6 +56,11 @@ public class ClassifiedServiceImpl implements ClassifiedService {
 	}
 
 	@Override
+	public List<Classified> getClassifiedsByCategoryId(Long id) {
+		return classifiedRepository.getClassifiedsByCategoryId(id);
+	}
+
+	@Override
 	@Transactional
 	public List<Category> getAllCategories() {
 		return categoryRepository.getAllCategories();

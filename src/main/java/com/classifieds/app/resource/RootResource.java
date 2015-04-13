@@ -126,6 +126,13 @@ public class RootResource {
 		return classifiedService.getClassifiedById(id);
 
 	}
+	@GET
+	@Path("classified/category/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<Classified> classifiedByCategoryId(@PathParam("id") Long id) {
+		return classifiedService.getClassifiedsByCategoryId(id);
+
+	}
 
 	@GET
 	@Path("category")

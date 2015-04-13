@@ -1,5 +1,6 @@
 package com.classifieds.app.model;
 
+import org.eclipse.persistence.oxm.annotations.XmlInverseReference;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
 
@@ -24,7 +25,8 @@ public class Category {
     @Size(min=4, max=100)
     private String name;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
+    @XmlInverseReference(mappedBy="category")
     private Classified classified;
 
     public Category() {}

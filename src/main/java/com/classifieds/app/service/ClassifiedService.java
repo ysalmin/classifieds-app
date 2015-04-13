@@ -22,9 +22,13 @@ public interface ClassifiedService {
 
 	List<Classified> getAllClassifieds();
 
+	List<Classified> getClassifiedsByCategoryId(Long id);
+
 	List<Category> getAllCategories();
 
 	Classified getClassifiedById(Long id);
 
 	Category getCategoryById(Long id);
+
+
 }

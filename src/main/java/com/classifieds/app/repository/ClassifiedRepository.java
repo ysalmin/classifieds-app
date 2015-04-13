@@ -20,6 +20,11 @@ public interface ClassifiedRepository extends JpaRepository<Classified, Long> {
 
     @Query("select c from Classified c where c.id = :id")
     Classified getClassifiedById(@Param("id") Long id);
+   /* from Cat as cat
+    left join cat.kittens as kitten
+    with kitten.bodyWeight > 10.0*/
+    @Query("select c from Classified c join c.categories cat where cat.id = :id")
+    List<Classified> getClassifiedsByCategoryId(@Param("id") Long id);
 
 
 

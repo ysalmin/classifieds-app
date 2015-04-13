@@ -39,7 +39,7 @@ public class Classified {
     @DateTimeFormat(pattern="MM/dd/yyyy")
     private Date created;
 
-    @OneToMany(fetch = FetchType.EAGER)//(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)//(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Category> categories = new HashSet<Category>();
 
     public Classified(){}
