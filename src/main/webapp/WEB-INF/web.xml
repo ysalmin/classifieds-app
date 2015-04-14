@@ -32,7 +32,7 @@
     	</init-param>
     	<init-param>
         	<param-name>jersey.config.server.mvc.templateBasePath.jsp</param-name>
-        	<param-value>/WEB-INF/jsp</param-value>
+        	<param-value>/</param-value>
     	</init-param>
     	<init-param>
     		<param-name>jersey.config.server.provider.classnames</param-name>
@@ -42,6 +42,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>Spring Jersey Web Servlet</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/rest/*</url-pattern>
     </servlet-mapping>
 </web-app>
