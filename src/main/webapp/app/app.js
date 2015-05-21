@@ -8,14 +8,13 @@ angular.module('classifieds-app', [
 	'classifieds-app.common',
 	'classifieds-app.home',
 	'classifieds-app.about',
-	'classifieds-app.classifieds'
+	'classifieds-app.categories',
+	'classifieds-app.classifieds',
+	'classifieds-app.classified'
 ]).
 config(['$urlRouterProvider','$stateProvider', function($urlRouterProvider, $stateProvider) {
 
-		$stateProvider
-			.state('classifieds.categories', {
-				url: '/categories/:id'
-			});
+
 	$urlRouterProvider.otherwise('/home');
 
 }]);

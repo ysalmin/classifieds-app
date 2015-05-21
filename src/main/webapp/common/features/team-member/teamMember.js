@@ -1,3 +1,0 @@
-'use strict';
-
-angular.module('classifieds-app.common.features.team-member', []);

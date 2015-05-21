@@ -7,7 +7,12 @@ config(function config($stateProvider) {
     $stateProvider
         .state('about', {
             url: '^/about',
-            controller: 'AboutCtrl',
-            templateUrl: 'app/about/about.tpl.html'
+
+            views:{
+                container:{
+                    controller: 'AboutCtrl',
+                    templateUrl: 'app/about/about.tpl.html'
+                }
+            }
         });
 });

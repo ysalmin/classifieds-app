@@ -2,7 +2,7 @@
 
 angular.module('classifieds-app.home').
 
-controller('HomeCtrl', function ($scope, TeamMemberModel, TeamMemberCollection) {
+controller('HomeCtrl', function ($scope) {
 
 
 });

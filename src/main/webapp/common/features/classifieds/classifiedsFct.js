@@ -2,20 +2,15 @@
 
 angular.module('classifieds-app.common.features.categories').
 
-    factory('classifiedsService', function () {
-
-        return [
+    factory('Classifieds',['$resource', function ($resource) {
+        return $resource(
+            '/rest/classified/category/:id',
+            {},
             {
-                "Title": "Computer1",
-                "description": "lorem ...",
-                "price":"10"
-            },
-            {
-                "Title": "Computer1",
-                "description": "lorem ...",
-                "price":"15"
+                query: {
+                    method:'GET',params:{id:'id'}, isArray:true
+                }
             }
-        ];
+        );
 
-
-    });
+    }]);

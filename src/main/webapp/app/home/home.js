@@ -7,7 +7,11 @@ config(function config($stateProvider) {
     $stateProvider
         .state('home', {
             url: '^/home',
-            controller: 'HomeCtrl',
-            templateUrl: 'app/home/home.tpl.html'
+            views:{
+                container:{
+                    controller: 'HomeCtrl',
+                    templateUrl: 'app/home/home.tpl.html'
+                }
+            }
         });
 });

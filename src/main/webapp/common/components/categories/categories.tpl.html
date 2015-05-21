@@ -1,7 +1,34 @@
-<div class="col-lg-3">
-    <ul class="nav nav-pills nav-stacked">
-        <li ui-sref-active="active" role="presentation" ng-repeat="category in categories">
-            <a ui-sref="classifieds.categories({id: {{category.id}}})" >{{category.name}}</a>
-        </li>
-    </ul>
+<div class="row">
+
+    <div class="col-lg-3">
+        <ul class="nav nav-pills nav-stacked">
+            <li ui-sref-active="active" role="presentation" ng-repeat="category in categories">
+                <a ui-sref="categories.classifieds({id: {{category.id}}})">{{category.name}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-lg-9">
+        <!--<div class="row">
+            <div class="col-lg-3">
+                <input class="form-control input-sm" type="text" placeholder="Search by name">
+            </div>
+            <div class="col-lg-3 pull-right">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label for="">Sort by</label>
+                        <select name="" id="" class="form-control input-sm ">
+                            <option value="">test</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <div class="row">
+            <div class=" ">
+               <!--<classifieds-classifieds></classifieds-classifieds>-->
+                <div ui-view="classifieds"></div>
+            </div>
+        </div>
+    </div>
 </div>
+
